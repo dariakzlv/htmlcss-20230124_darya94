@@ -22,6 +22,12 @@
     color: var(--font-color);
 }
 
+.component-description__component-view_button {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+}
+
 .component-description__component-view_custom-form-elem {
     display: flex;
     gap: 88px;

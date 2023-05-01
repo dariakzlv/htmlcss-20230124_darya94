@@ -51,9 +51,9 @@
                                 <h4 class="side-menu__title">Elements</h4>
                                 <div class="side-menu__link-list">
                                     <a class="side-menu__link" href="/pages/page-input.html">Input</a>
-                                    <a class="side-menu__link side-menu__link_active" href="/pages/page-tooltip.html">Tooltip</a>
+                                    <a class="side-menu__link" href="/pages/page-tooltip.html">Tooltip</a>
                                     <a class="side-menu__link" href="/pages/page-custom-form-elem.html">Custom form elements</a>
-                                    <a class="side-menu__link" href="/pages/page-avatar.html">Avatar</a>
+                                    <a class="side-menu__link side-menu__link_active" href="/pages/page-avatar.html">Avatar</a>
                                     <a class="side-menu__link" href="/pages/page-button.html">Button</a>
                                 </div>
                             </div>
@@ -79,15 +79,10 @@
                             </div>
                         </div>
                         <div class="component-description">
-                            <h3 class="component-description__title">Tooltip</h3>
+                            <h3 class="component-description__title">Avatar</h3>
                             <div class="component-description__component-view">
-                                <div class="tooltip tooltip_component-page">
-                                    <svg class="tooltip__trigger">
-                                        <use href="/assets/images/icons-sprite.svg#help"></use>
-                                    </svg>
-                                    <div class="tooltip__bubble">
-                                        <p class="tooltip__text">Helper Text</p>
-                                    </div>
+                                <div class="avatar">
+                                    <img class="avatar__image" src="/assets/images/avatar.png" alt="avatar image">
                                 </div>
                             </div>
                             <div class="component-description__code">
@@ -107,69 +102,30 @@
                                     <div class="tabs__content tabs__content_html">                  
                                         <div class="tabs__content-code">
                                             <code>
-                                                &ltdiv class="tooltip"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&ltsvg class="tooltip__trigger"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltuse href="/assets/images/icons-sprite.svg#help"&gt&ltuse&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&lt/svg&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&ltdiv class="tooltip__bubble"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltp class="tooltip__text"&gtHelper Text&lt/p&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&lt/div&gt <br>
-                                                &lt/div&gt <br>
+                                                &ltdiv class="avatar"&gt<br>
+                                                    &nbsp&nbsp&nbsp&nbsp&ltimg class="avatar__image" src="/assets/images/avatar.png" alt="avatar image"&gt<br>
+                                                    &lt/div>&gt
                                             </code>
                                         </div>
                                     </div>
                                     <div class="tabs__content tabs__content_css">
                                         <div class="tabs__content-code">
                                             <code>
-                                                .tooltip {<br>
-                                                    display: inline-block;<br>
-                                                    position: relative;<br>
+                                                .avatar {<br>
+                                                    width: 120px;<br>
+                                                    height: 120px;<br>
                                                 }<br>
                                                 <br>
-                                                .tooltip__trigger {<br>
-                                                    cursor:pointer;<br>
-                                                    z-index: 100;<br>
-                                                    width: 24px;<br>
-                                                    height: 24px;<br>
+                                                .avatar__image {<br>
+                                                    width: 100%;<br>
+                                                    height: 100%;<br>
+                                                    object-fit: cover;<br>
+                                                    border-radius: 50%;<br>
                                                 }<br>
                                                 <br>
-                                                .tooltip__bubble {<br>
-                                                    background: var(--blue);<br>
-                                                    box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);<br>
-                                                    border-radius: 10px;<br>
-                                                    padding: 10px 21px 8px 21px;<br>
-                                                    display: none;<br>
-                                                    position:absolute;<br>
-                                                    left: 50%;<br>
-                                                    bottom: Calc(100% + 10px);<br>
-                                                    transform: translateX(-50%);<br>
-                                                    white-space: nowrap;<br>
-                                                }<br>
-                                                <br>
-                                                .tooltip__bubble::before {<br>
-                                                    content: "";<br>
-                                                    border: 10px solid transparent;<br>
-                                                    border-top-color: var(--blue);<br>
-                                                    position: absolute;<br>
-                                                    top: 100%;<br>
-                                                    transform: translateX(-50%);<br>
-                                                    left: 50%;<br>
-                                                    z-index: 1;<br>
-                                                }<br>
-                                                <br>
-                                                .tooltip__text {<br>
-                                                    font-family: 'Inter';<br>
-                                                    font-style: normal;<br>
-                                                    font-weight: 400;<br>
-                                                    font-size: 16px;<br>
-                                                    line-height: 24px;<br>
-                                                    text-align: center;<br>
-                                                    color: var(--grey-2);<br>
-                                                    margin: 0;<br>
-                                                }<br>
-                                                <br>
-                                                .tooltip__trigger:hover ~ .tooltip__bubble {<br>
-                                                    display: block;<br>
+                                                .avatar_preview {<br>
+                                                    width: 180px;<br>
+                                                    height: 180px;<br>
                                                 }
                                             </code>
                                         </div>

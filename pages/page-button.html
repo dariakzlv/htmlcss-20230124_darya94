@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="/assets/css/main.css">
         <link rel="stylesheet" href="/components/side-menu/side-menu.css">
         <link rel="stylesheet" href="/components/component-description/component-description.css">
+        <link rel="stylesheet" href="/03-lection1/01-button/wrapper-button.css">
         <script defer src="/10-lection8/01-theme-changer/theme-changer.js"></script>
     </head>
     <body>
@@ -51,10 +52,10 @@
                                 <h4 class="side-menu__title">Elements</h4>
                                 <div class="side-menu__link-list">
                                     <a class="side-menu__link" href="/pages/page-input.html">Input</a>
-                                    <a class="side-menu__link side-menu__link_active" href="/pages/page-tooltip.html">Tooltip</a>
+                                    <a class="side-menu__link" href="/pages/page-tooltip.html">Tooltip</a>
                                     <a class="side-menu__link" href="/pages/page-custom-form-elem.html">Custom form elements</a>
                                     <a class="side-menu__link" href="/pages/page-avatar.html">Avatar</a>
-                                    <a class="side-menu__link" href="/pages/page-button.html">Button</a>
+                                    <a class="side-menu__link side-menu__link_active" href="/pages/page-button.html">Button</a>
                                 </div>
                             </div>
                             <div class="side-menu__block">
@@ -79,16 +80,20 @@
                             </div>
                         </div>
                         <div class="component-description">
-                            <h3 class="component-description__title">Tooltip</h3>
-                            <div class="component-description__component-view">
-                                <div class="tooltip tooltip_component-page">
-                                    <svg class="tooltip__trigger">
-                                        <use href="/assets/images/icons-sprite.svg#help"></use>
-                                    </svg>
-                                    <div class="tooltip__bubble">
-                                        <p class="tooltip__text">Helper Text</p>
-                                    </div>
+                            <h3 class="component-description__title">Button</h3>
+                            <div class="component-description__component-view_button">
+                                <div class="wrapper-button">
+                                    <button class="button button_primary">Primary</button>
+                                    <button disabled class="button button_primary">Primary disabled</button>
                                 </div>
+                                <div class="wrapper-button">
+                                    <button class="button button_secondary">Secondary</button>
+                                    <button disabled class="button button_secondary">Secondary disabled</button>
+                                </div>
+                                <div class="wrapper-button">
+                                    <button class="button button_alternate">Alternate</button>
+                                    <button disabled class="button button_alternate">Alternate disabled</button>
+                                </div>                    
                             </div>
                             <div class="component-description__code">
                                 <div class="tabs">
@@ -107,70 +112,93 @@
                                     <div class="tabs__content tabs__content_html">                  
                                         <div class="tabs__content-code">
                                             <code>
-                                                &ltdiv class="tooltip"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&ltsvg class="tooltip__trigger"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltuse href="/assets/images/icons-sprite.svg#help"&gt&ltuse&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&lt/svg&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&ltdiv class="tooltip__bubble"&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltp class="tooltip__text"&gtHelper Text&lt/p&gt <br>
-                                                &nbsp&nbsp&nbsp&nbsp&lt/div&gt <br>
-                                                &lt/div&gt <br>
+                                                &ltbutton class="button button_primary"&gtPrimary&lt/button&gt<br>
+                                                &ltbutton disabled class="button button_primary"&gtPrimary disabled&lt/button&gt<br>
+                                                &ltbutton class="button button_secondary"&gtSecondary&lt/button&gt<br>
+                                                &ltbutton disabled class="button button_secondary"&gtSecondary disabled&lt/button&gt<br>
+                                                &ltbutton class="button button_alternate"&gtAlternate&lt/button&gt<br>
+                                                &ltbutton disabled class="button button_alternate"&gtAlternate disabled&lt/button&gt<br>
                                             </code>
                                         </div>
                                     </div>
                                     <div class="tabs__content tabs__content_css">
                                         <div class="tabs__content-code">
                                             <code>
-                                                .tooltip {<br>
-                                                    display: inline-block;<br>
-                                                    position: relative;<br>
-                                                }<br>
-                                                <br>
-                                                .tooltip__trigger {<br>
-                                                    cursor:pointer;<br>
-                                                    z-index: 100;<br>
-                                                    width: 24px;<br>
-                                                    height: 24px;<br>
-                                                }<br>
-                                                <br>
-                                                .tooltip__bubble {<br>
-                                                    background: var(--blue);<br>
-                                                    box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);<br>
-                                                    border-radius: 10px;<br>
-                                                    padding: 10px 21px 8px 21px;<br>
-                                                    display: none;<br>
-                                                    position:absolute;<br>
-                                                    left: 50%;<br>
-                                                    bottom: Calc(100% + 10px);<br>
-                                                    transform: translateX(-50%);<br>
+                                                .button {<br>
+                                                    cursor: pointer;<br>
+                                                    padding: 15px 56px 14px 56px;<br>
+                                                    border-radius: 8px;<br>
+                                                    font-family: 'Roboto';<br>
+                                                    font-style: normal;<br>
+                                                    font-weight: 500;<br>
+                                                    font-size: 16px;<br>
+                                                    line-height: 19px;<br>
+                                                    text-align: center;<br>
+                                                    color: var(--white);<br>
+                                                    border: none;<br>
+                                                    transition: opacity 200ms ease-in-out, background 200ms ease-in-out;<br>
                                                     white-space: nowrap;<br>
                                                 }<br>
                                                 <br>
-                                                .tooltip__bubble::before {<br>
-                                                    content: "";<br>
-                                                    border: 10px solid transparent;<br>
-                                                    border-top-color: var(--blue);<br>
-                                                    position: absolute;<br>
-                                                    top: 100%;<br>
-                                                    transform: translateX(-50%);<br>
-                                                    left: 50%;<br>
-                                                    z-index: 1;<br>
+                                                .button_primary {<br>
+                                                    background: var(--blue);<br>
                                                 }<br>
                                                 <br>
-                                                .tooltip__text {<br>
-                                                    font-family: 'Inter';<br>
-                                                    font-style: normal;<br>
-                                                    font-weight: 400;<br>
-                                                    font-size: 16px;<br>
-                                                    line-height: 24px;<br>
-                                                    text-align: center;<br>
-                                                    color: var(--grey-2);<br>
-                                                    margin: 0;<br>
+                                                .button_primary:hover {<br>
+                                                    background: var(--deep-blue);<br>
                                                 }<br>
                                                 <br>
-                                                .tooltip__trigger:hover ~ .tooltip__bubble {<br>
-                                                    display: block;<br>
-                                                }
+                                                .button_primary:disabled {<br>
+                                                    pointer-events: none;<br>
+                                                    opacity: 0.5;<br>
+                                                }<br>
+                                                <br>
+                                                .button_secondary {<br>
+                                                    background: var(--purple);<br>
+                                                }<br>
+                                                <br>
+                                                .button_secondary:hover {<br>
+                                                    background: var(--deep-purple);<br>
+                                                }<br>
+                                                <br>
+                                                .button_secondary:disabled {<br>
+                                                    pointer-events: none;<br>
+                                                    opacity: 0.5;<br>
+                                                }<br>
+                                                <br>
+                                                .button_alternate {<br>
+                                                    background: var(--white-bg);<br>
+                                                    color: var(--font-color);<br>
+                                                    border: 1px solid var(--grey-3);<br>
+                                                }<br>
+                                                <br>
+                                                .button_alternate:hover {<br>
+                                                    border: 1px solid var(--font-color);<br>
+                                                    transition: border 200ms ease-in-out;<br>
+                                                }<br>
+                                                <br>
+                                                .button_alternate:disabled {<br>
+                                                    pointer-events: none;<br>
+                                                    opacity: 0.3;<br>
+                                                    transition: opacity 200ms ease-in-out, border 200ms ease-in-out;<br>
+                                                }<br>
+                                                <br>
+                                                .button_icon {<br>
+                                                    padding: 4px;<br>
+                                                    border: none;<br>
+                                                    line-height: 0;<br>
+                                                    cursor: pointer;<br>
+                                                }<br>
+                                                <br>
+                                                .button_preview-modal {<br>
+                                                    padding: 8px 16px 8px 16px;<br>
+                                                    font-size: 14px;<br>
+                                                    line-height: 16px;<br>
+                                                }<br>
+                                                <br>
+                                                .button_preview {<br>
+                                                    pointer-events: none;<br>
+                                                }<br>
                                             </code>
                                         </div>
                                     </div>
